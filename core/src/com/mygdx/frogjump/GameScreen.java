@@ -145,8 +145,10 @@ public class GameScreen implements Screen {
             if (rock.getX() <= 100) {
                 score++;
             }
-            if (rock.getX() < -154) {
+            if (rock.getX() < 100) {
                 obstacles.removeValue(rock, true);
+            }
+            if (rock.getX() < -200) {
                 rock.remove();
             }
         }
