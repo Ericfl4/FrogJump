@@ -18,6 +18,7 @@ public class Frog extends Game {
 	AssetManager manager;
 	int topScore;
 	int lastScore;
+	boolean record = false;
 	public void create() {
 
 		batch = new SpriteBatch();
@@ -45,6 +46,7 @@ public class Frog extends Game {
 		manager.load("suelo.png", Texture.class);
 		manager.load("nubes.png", Texture.class);
 		manager.load("cielo.png", Texture.class);
+		manager.load("medal.png", Texture.class);
 		manager.load("flap.wav", Sound.class);
 		manager.load("fail.wav", Sound.class);
 		manager.load("win.wav", Sound.class);

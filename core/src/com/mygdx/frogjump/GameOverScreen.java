@@ -22,12 +22,17 @@ public class GameOverScreen implements Screen {
         game.batch.begin();
         game.batch.draw(game.manager.get("background.png",
                 Texture.class), 0, 0);
+        game.batch.draw(game.manager.get("medal.png", Texture.class), 480,
+                250);
         game.bigFont.draw(game.batch, "GAME OVER! ", 530, 500);
-        game.bigFont.draw(game.batch, "Final Score: " + game.lastScore, 490, 380);
-        game.bigFont.draw(game.batch, "Top Score: " + game.topScore, 510, 320);
+        game.bigFont.draw(game.batch, "Final Score: " + game.lastScore, 500, 380);
+        game.bigFont.draw(game.batch, "Top Score: " + game.topScore, 540, 300);
+
+
 
         game.batch.end();
         if (Gdx.input.justTouched()) {
+            game.record=true;
             game.setScreen(new com.mygdx.frogjump.MainMenuScreen(game));
             dispose();
         }

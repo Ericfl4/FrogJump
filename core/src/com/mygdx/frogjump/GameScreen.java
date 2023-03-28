@@ -24,7 +24,7 @@ public class GameScreen implements Screen {
     int xSuelo = 0;
     int xNubes = 0;
     int xCielo = 0;
-
+    int sumarSaltoExtra = 0;
     public GameScreen(final Frog gam) {
         this.game = gam;
         // create the camera and the SpriteBatch
@@ -127,7 +127,7 @@ public class GameScreen implements Screen {
         }
 
         // Comprova si cal generar un obstacle nou
-        if ( (TimeUtils.nanosToMillis(TimeUtils.nanoTime())) - lastObstacleTime > ((int) (Math.random()*20000+250))) {
+        if ( (TimeUtils.nanosToMillis(TimeUtils.nanoTime())) - lastObstacleTime > ((int) (Math.random()*20000+450))) {
             spawnObstacle();
         }
 // Comprova si les tuberies colisionen amb el jugador
@@ -144,9 +144,16 @@ public class GameScreen implements Screen {
             Rock rock = iter.next();
             if (rock.getX() <= 100) {
                 score++;
+                sumarSaltoExtra++;
+                if (sumarSaltoExtra==10){
+                    sumarSaltoExtra=0;
+                    player.saltos++;
+                }
             }
-            if (rock.getX() < -154) {
+            if (rock.getX() < 100) {
                 obstacles.removeValue(rock, true);
+            }
+            if (rock.getX() < -200) {
                 rock.remove();
             }
         }
@@ -163,8 +170,10 @@ public class GameScreen implements Screen {
             if(game.lastScore > game.topScore) {
                 game.manager.get("win.wav", Sound.class).play();
                 game.topScore = game.lastScore;
+                game.record=true;
             } else {
                 game.manager.get("fail.wav", Sound.class).play();
+
             }
             game.setScreen(new GameOverScreen(game));
             dispose();
