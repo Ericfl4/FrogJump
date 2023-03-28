@@ -52,7 +52,7 @@ public class Player extends Actor {
             return true;
         } else {
             if (saltos>0&&comefromground){
-                speedy = 1000f;
+                speedy = 650f;
                 saltos--;
                 saltoDoble=true;
                 comefromground=false;
