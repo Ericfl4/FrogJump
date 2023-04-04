@@ -46,8 +46,13 @@ public class GameScreen implements Screen {
 // Calcula la alçada de l'obstacle aleatòriament
 // Crea dos obstacles: Una tubería superior i una inferior
         Rock rock1 = new Rock();
+        if (rock1.num==2||rock1.num==3){
+            rock1.setY(115);
+        } else {
+            rock1.setY(105);
+        }
+
         rock1.setX(1500);
-        rock1.setY(125);
         rock1.setManager(game.manager);
         obstacles.add(rock1);
         stage.addActor(rock1);

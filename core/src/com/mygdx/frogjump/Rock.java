@@ -9,12 +9,24 @@ import com.badlogic.gdx.scenes.scene2d.Actor;
 public class Rock extends Actor {
     Rectangle bounds;
     AssetManager manager;
-
+    int num;
     public Rock()
     {
-        setSize(154, 79);
+        int random = ((int) (Math.random()*4+1));
+        num = random;
+        if (random==1){
+            setSize(154, 79);
+        } else if (random==2){
+            setSize(130, 89);
+        } else if (random==2){
+            setSize(128, 72);
+        } else {
+            setSize(164, 66);
+        }
+
         bounds = new Rectangle();
         setVisible(false);
+
     }
     @Override
     public void act(float delta)
@@ -30,7 +42,7 @@ public class Rock extends Actor {
     @Override
     public void draw(Batch batch, float parentAlpha) {
         super.draw(batch, parentAlpha);
-        batch.draw( manager.get( "rock.png", Texture.class), getX()-20, getY() );
+        batch.draw( manager.get( num==1 ? "rock.png" : num==2 ? "rock2.png" : num==3 ? "rock3.png" : "rock4.png" , Texture.class), getX()-20, getY()+20);
     }
     public Rectangle getBounds() {
         return bounds;

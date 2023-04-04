@@ -42,6 +42,9 @@ public class Frog extends Game {
 		manager.load("frog_jump1.png", Texture.class);
 		manager.load("frog_jump2.png", Texture.class);
 		manager.load("rock.png", Texture.class);
+		manager.load("rock2.png", Texture.class);
+		manager.load("rock3.png", Texture.class);
+		manager.load("rock4.png", Texture.class);
 		manager.load("background.png", Texture.class);
 		manager.load("suelo.png", Texture.class);
 		manager.load("nubes.png", Texture.class);
