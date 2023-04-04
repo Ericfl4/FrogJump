@@ -96,6 +96,26 @@ public class GameScreen implements Screen {
                 543);
         game.batch.draw(game.manager.get("cielo.png", Texture.class), xCielo+1440,
                 543);
+
+        if (player.ground){
+            game.batch.draw(game.manager.get("boton1_oscuro.png", Texture.class), 1250,
+                    250);
+            game.batch.draw(game.manager.get("boton2.png", Texture.class), 1250,
+                    430);
+        } else {
+            game.batch.draw(game.manager.get("boton1.png", Texture.class), 1250,
+                    250);
+            if (player.saltos>0){
+                game.batch.draw(game.manager.get("boton3.png", Texture.class), 1250,
+                        430);
+            } else {
+                game.batch.draw(game.manager.get("boton3_oscuro.png", Texture.class), 1250,
+                        430);
+            }
+        }
+
+
+
         game.batch.end();
 // Stage batch: Actors
         stage.getBatch().setProjectionMatrix(camera.combined);

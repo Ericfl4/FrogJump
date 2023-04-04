@@ -50,9 +50,14 @@ public class Frog extends Game {
 		manager.load("nubes.png", Texture.class);
 		manager.load("cielo.png", Texture.class);
 		manager.load("medal.png", Texture.class);
+		manager.load("boton1.png", Texture.class);
+		manager.load("boton2.png", Texture.class);
+		manager.load("boton3.png", Texture.class);
+		manager.load("boton1_oscuro.png", Texture.class);
+		manager.load("boton2_oscuro.png", Texture.class);
+		manager.load("boton3_oscuro.png", Texture.class);
 		manager.load("flap.wav", Sound.class);
 		manager.load("win.wav", Sound.class);
-
 		manager.finishLoading();
 
 		this.setScreen(new MainMenuScreen(this));
