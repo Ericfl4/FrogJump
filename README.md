@@ -1,3 +1,3 @@
 # FrogJump
 
-![image](https://user-images.githubusercontent.com/80744000/228276203-d0647113-b8aa-4a1d-936e-3d4ade936a1d.png)
+![image](https://user-images.githubusercontent.com/80744000/229919787-83aa7bd2-39a9-4918-9497-c6b72e033301.png)
