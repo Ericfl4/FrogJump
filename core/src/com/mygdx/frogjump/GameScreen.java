@@ -99,12 +99,12 @@ public class GameScreen implements Screen {
 
         if (player.ground){
             game.batch.draw(game.manager.get("boton1_oscuro.png", Texture.class), 1250,
-                    250);
+                    230);
             game.batch.draw(game.manager.get("boton2.png", Texture.class), 1250,
                     430);
         } else {
             game.batch.draw(game.manager.get("boton1.png", Texture.class), 1250,
-                    250);
+                    230);
             if (player.saltos>0){
                 game.batch.draw(game.manager.get("boton3.png", Texture.class), 1250,
                         430);
@@ -121,12 +121,17 @@ public class GameScreen implements Screen {
         stage.getBatch().setProjectionMatrix(camera.combined);
         stage.draw();
         // process user input
-        if (Gdx.input.justTouched()) {
+        if (Gdx.input.justTouched() && Gdx.input.getX()>1200 && Gdx.input.getY()<520 && Gdx.input.getY()>280) {
             boolean salto = player.impulso();
             if (salto){
                 game.manager.get("flap.wav", Sound.class).play();
             }
         }
+        if (Gdx.input.justTouched() && Gdx.input.getX()>1200 && Gdx.input.getY()<720 && Gdx.input.getY()>480) {
+            player.caer();
+        }
+
+
 
         stage.act();
 // Comprova que el jugador no es surt de la pantalla.

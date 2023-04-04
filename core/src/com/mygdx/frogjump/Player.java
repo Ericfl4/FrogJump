@@ -44,8 +44,7 @@ public class Player extends Actor {
     public void setManager(AssetManager manager) {
         this.manager = manager;
     }
-    public boolean impulso()
-    {
+    public boolean impulso() {
         if (this.ground){
             speedy = 1000f;
             comefromground=true;
@@ -60,5 +59,8 @@ public class Player extends Actor {
             }
         }
         return false;
+    }
+    public void caer() {
+            speedy = -2500f;
     }
 }
