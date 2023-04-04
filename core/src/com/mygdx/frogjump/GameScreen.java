@@ -171,9 +171,6 @@ public class GameScreen implements Screen {
                 game.manager.get("win.wav", Sound.class).play();
                 game.topScore = game.lastScore;
                 game.record=true;
-            } else {
-                game.manager.get("fail.wav", Sound.class).play();
-
             }
             game.setScreen(new GameOverScreen(game));
             dispose();

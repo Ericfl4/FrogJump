@@ -9,6 +9,7 @@ import com.badlogic.gdx.scenes.scene2d.Actor;
 public class Rock extends Actor {
     Rectangle bounds;
     AssetManager manager;
+
     public Rock()
     {
         setSize(154, 79);

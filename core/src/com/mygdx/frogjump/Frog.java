@@ -48,7 +48,6 @@ public class Frog extends Game {
 		manager.load("cielo.png", Texture.class);
 		manager.load("medal.png", Texture.class);
 		manager.load("flap.wav", Sound.class);
-		manager.load("fail.wav", Sound.class);
 		manager.load("win.wav", Sound.class);
 
 		manager.finishLoading();

@@ -2,6 +2,7 @@ package com.mygdx.frogjump;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.utils.ScreenUtils;
@@ -22,17 +23,20 @@ public class GameOverScreen implements Screen {
         game.batch.begin();
         game.batch.draw(game.manager.get("background.png",
                 Texture.class), 0, 0);
-        game.batch.draw(game.manager.get("medal.png", Texture.class), 480,
+        game.batch.draw(game.manager.get("medal.png", Texture.class), 500,
                 250);
+        if (game.record){
+            game.smallFont.draw(game.batch, "NEW RECORD! ", 620, 250);
+        }
         game.bigFont.draw(game.batch, "GAME OVER! ", 530, 500);
         game.bigFont.draw(game.batch, "Final Score: " + game.lastScore, 500, 380);
-        game.bigFont.draw(game.batch, "Top Score: " + game.topScore, 540, 300);
+        game.bigFont.draw(game.batch, "Top Score: " + game.topScore, 555, 300);
 
 
 
         game.batch.end();
         if (Gdx.input.justTouched()) {
-            game.record=true;
+            game.record=false;
             game.setScreen(new com.mygdx.frogjump.MainMenuScreen(game));
             dispose();
         }
