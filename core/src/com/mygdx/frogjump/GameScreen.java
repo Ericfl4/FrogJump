@@ -105,7 +105,7 @@ public class GameScreen implements Screen {
         } else {
             game.batch.draw(game.manager.get("boton1.png", Texture.class), 1250,
                     230);
-            if (player.saltos>0){
+            if (player.saltos>0 && !player.saltoDoble){
                 game.batch.draw(game.manager.get("boton3.png", Texture.class), 1250,
                         430);
             } else {
